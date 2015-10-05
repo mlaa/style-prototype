@@ -1,0 +1,33 @@
+// Main search field
+
+.main-search {
+
+  margin: 0.5em;
+
+  @include breakpoint(lg) {
+    margin: 0.5em 1em;
+  }
+
+  .search-field {
+    background-image: url($search-icon);
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border: solid 1px $input-border-color-dark;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    max-width: 600px;
+    padding: 4px 5px 4px 24px;
+    width: 100%;
+  }
+
+  form,
+  fieldset {
+    margin: 0;
+  }
+
+  .instructions {
+    display: none;
+  }
+
+}

@@ -1,0 +1,47 @@
+// Colors
+
+// General colors
+$black: #000;
+$white: #fff;
+$mla-blue: #07d;
+
+// Page colors
+$page-background-color: #fff;
+$page-text-color: #000;
+$page-link-color: $mla-blue;
+$page-link-hover-color: $mla-blue;
+
+$level-minus-one-color: darken($page-background-color, 2%);
+$level-minus-two-color: #eee;
+
+// Navigation
+$nav-background-color: $white;
+$nav-text-color: $black;
+
+// Tile colors
+$tile-background-color: #fff;
+$tile-border-color: #eee;
+
+// Recessed colors
+$recessed-background-color: #eee;
+
+// Darker Tiles
+$tile-background-color-darker: darken($tile-background-color, 10%);
+$tile-border-color-darker: darken($tile-border-color, 10%);
+
+// Input colors
+$input-border-color-light: #eee;
+$input-border-color-dark: #ddd;
+
+// Button colors
+$button-text-color: #000;
+$button-background-color: #fda;
+
+// Table colors
+$table-border-color: #eee;
+$table-head-border-color: #ddd;
+$table-hover-background-color: #fafafa;
+
+// Footer Colors
+$footer-bg-color: $white;
+$footer-text: $black;

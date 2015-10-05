@@ -1,0 +1,27 @@
+{
+  "jobs": [
+    {
+      "files": [
+        "public/**/*.html"
+      ]
+    },
+    {
+      "files": [
+        "src/scss/**/*.scss"
+      ],
+      "tasks": [
+        "scss-lint",
+        "sass"
+      ]
+    },
+    {
+      "files": [
+        "src/js/**/*.js"
+      ],
+      "tasks": [
+        "js-lint",
+        "browserify"
+      ]
+    }
+  ]
+}

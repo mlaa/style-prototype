@@ -1,0 +1,14 @@
+// Video player
+
+.video-player {
+
+  background-color: #adf;
+  padding: 0.5em;
+  position: relative;
+
+  iframe {
+    min-height: 240px;
+    width: 100%;
+  }
+
+}

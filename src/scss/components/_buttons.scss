@@ -1,0 +1,47 @@
+@mixin button($color: $button-text-color, $background-color: $button-background-color) {
+
+  @include tile;
+
+  background-color: $background-color;
+  border: none;
+  border-bottom: 2px solid darken($background-color, 20%);
+  color: $color;
+  padding: 0.5em 0.75em;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover,
+  &.current {
+    color: $color;
+  }
+
+  &:active {
+    border-bottom: none;
+    margin-top: 2px;
+  }
+
+}
+
+button,
+.button,
+.generic-button a {
+  @include button;
+}
+
+.pagination {
+
+  align-items: baseline;
+  display: flex;
+  padding: 1em;
+
+  .pag-count {
+    flex: 1;
+  }
+
+  .pagination-links > .page-numbers,
+  .page-numbers {
+    @include button;
+  }
+
+}

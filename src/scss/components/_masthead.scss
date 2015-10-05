@@ -1,0 +1,23 @@
+// Masthead
+
+.masthead {
+
+  border-top: solid 10px $mla-blue;
+  padding: 1em 0.5em 0.5em 0.5em;
+
+  a {
+    color: $black;
+  }
+
+  @include breakpoint(md) {
+    padding: 1.5em 1em 0.5em 1em;
+  }
+
+}
+
+.masthead-title {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}

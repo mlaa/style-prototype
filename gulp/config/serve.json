@@ -1,0 +1,12 @@
+{
+  "browserSync": {
+    "notify": true,
+    "server": {
+      "baseDir": "./",
+      "routes": {
+        "/internal/style-prototype": "public"
+      }
+    },
+    "startPath": "/internal/style-prototype/"
+  }
+}

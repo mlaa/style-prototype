@@ -1,0 +1,61 @@
+// User profile links
+
+.user-profile-link {
+
+  position: absolute;
+  right: 0.5em;
+  top: 15px;
+
+  p {
+    line-height: 48px;
+  }
+
+  @include breakpoint(md) {
+    top: 20px;
+  }
+
+}
+
+.user-name {
+
+  display: none;
+  font-weight: $text-bold;
+
+  @include breakpoint(md) {
+    display: inline;
+  }
+
+}
+
+.avatar-link {
+
+  color: $black;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+.avatar {
+
+  height: 32px;
+  margin: 0 0.5em;
+  vertical-align: middle;
+  width: 32px;
+
+  @include breakpoint(md) {
+    height: 48px;
+    width: 48px;
+  }
+
+  &:after {
+    border-color: #007bff transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px 7.5px 0 7.5px;
+    content: ' ';
+    height: 10px;
+    width: 10px;
+  }
+
+}

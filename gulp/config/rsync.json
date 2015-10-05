@@ -1,0 +1,8 @@
+{
+  "source": "public/**",
+  "target": {
+    "root": "public",
+    "hostname": "ep",
+    "destination": "/var/www/internal/style-prototype"
+  }
+}
