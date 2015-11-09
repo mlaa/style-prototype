@@ -6,6 +6,11 @@
   padding: 0.5em;
   position: relative;
 
+  @include breakpoint(lg) {
+    margin: 0 1em 1em 0;
+    padding: 1em;
+  }
+
   iframe {
     min-height: 240px;
     width: 100%;

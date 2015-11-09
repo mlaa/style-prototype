@@ -3,7 +3,12 @@
 .content {
 
   @include breakpoint(lg) {
-    margin: 3em 2em;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em 0;
   }
 
 }
@@ -12,71 +17,25 @@
   margin: 3em 1em;
 }
 
-.item-list {
+.homepage-tile {
 
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
+  @include breakpoint(lg) {
 
-  li {
+    box-sizing: border-box;
+    flex-basis: 48%;
 
-    @include tile;
-    align-items: center;
-    display: flex;
-    flex: 1 1 25em;
-    margin: 1em;
-    min-height: 175px;
+    > h4 {
+      margin-top: 0;
+    }
 
-    .item {
-      margin: 1.5em;
-      min-width: 9em;
+    .overflow {
+      display: block;
     }
 
   }
 
 }
 
-.item-avatar {
-  img {
-    @include tile;
-    border-radius: 3px;
-    display: block;
-    margin-left: -0.8em;
-  }
-}
-
-.item-title {
-  font-size: $size-m;
-
-  .update {
-    font-size: $size-xs;
-  }
-
-}
-
-#item-header {
-
-  @include content;
-  display: flex;
-
-  #item-header-avatar {
-
-    margin: 2em 3%;
-    width: 20%;
-
-    img {
-      height: auto;
-      width: 100%;
-    }
-
-    #item-buttons {
-      text-align: center;
-    }
-
-  }
-
-}
-
-#item-body > #bbpress-forums {
-  @include content;
+.blog-posts {
+  clear: left;
 }

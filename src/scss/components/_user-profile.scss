@@ -16,7 +16,8 @@
 
 }
 
-.user-name {
+.user-name,
+.join {
 
   display: none;
   font-weight: $text-bold;
@@ -25,6 +26,10 @@
     display: inline;
   }
 
+}
+
+.join {
+  margin-left: 0.5em;
 }
 
 .avatar-link {
@@ -58,4 +63,8 @@
     width: 10px;
   }
 
+}
+
+.user-logged-out {
+  display: none;
 }

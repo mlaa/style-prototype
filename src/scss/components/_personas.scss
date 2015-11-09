@@ -15,17 +15,58 @@
     border: none;
   }
 
-  > p {
+  @include breakpoint(lg) {
+
+    background-image: url($persona-icon);
+    background-position: right 5px top 8px;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    border: solid 2px #ccc;
+    margin: 0 1em 1em 0;
+    padding: 1em;
+
+    &:first-child {
+      border: solid 2px #ccc;
+    }
+
+    &:hover {
+      border: solid 2px $mla-blue;
+      color: $mla-blue;
+    }
+
+  }
+
+  > h4 {
+
     background-image: url($persona-icon);
     background-position: -4px top;
     background-repeat: no-repeat;
     background-size: 32px 32px;
-    margin: 0.5em 20px 0.5em 0;
+    line-height: 1.2em;
     padding: 0 0 0 32px;
+
+    @include breakpoint(lg) {
+      background-image: none;
+      padding: 0;
+    }
+
+  }
+
+  > p {
+
+    margin: 0.5em 20px 0.5em 0;
+
+    @include breakpoint(lg) {
+      padding: 0;
+    }
+
   }
 
   .overflow {
     display: none;
+    @include breakpoint(lg) {
+      display: inline;
+    }
   }
 
 }
