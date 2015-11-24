@@ -1,4 +1,4 @@
 {
-  "source": "src/js",
-  "target": "public/build/"
+  "source": "src/js/main.js",
+  "target": "public/build"
 }

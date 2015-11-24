@@ -16,7 +16,8 @@
     },
     {
       "files": [
-        "src/js/**/*.js"
+        "src/js/**/*.js",
+        "src/js/**/*.tmpl"
       ],
       "tasks": [
         "js-lint",

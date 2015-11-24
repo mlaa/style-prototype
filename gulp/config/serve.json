@@ -4,9 +4,8 @@
     "server": {
       "baseDir": "./",
       "routes": {
-        "/internal/style-prototype": "public"
+        "/": "public"
       }
-    },
-    "startPath": "/internal/style-prototype/"
+    }
   }
 }

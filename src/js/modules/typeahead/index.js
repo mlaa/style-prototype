@@ -1,45 +1,47 @@
-/*
- * Typeahead suggestions for search field.
- */
+/* Typeahead suggestions */
 
-'use strict';
+module.exports = function (Module, App, Backbone) {
 
-var $ = require('jquery');
-require('typeahead.js');
+  'use strict';
 
-// Load terms.
-var terms = require('./terms.json');
+  var $ = Backbone.$;
+  require('typeahead.js');
 
-// Add Typeahead to search field.
-function findMatches (q, cb) {
+  // Load terms.
+  var terms = require('./terms.json');
 
-  // an array that will be populated with substring matches
-  var matches = [];
+  // Add Typeahead to search field.
+  function findMatches (q, cb) {
 
-  // regex used to determine if a string contains the substring `q`
-  var substrRegex = new RegExp(q, 'i');
+    // an array that will be populated with substring matches
+    var matches = [];
 
-  // iterate through the pool of strings and for any string that
-  // contains the substring `q`, add it to the `matches` array
-  $.each(terms, function (i, str) {
-    if (substrRegex.test(str)) {
-      matches.push(str);
-    }
-  });
+    // regex used to determine if a string contains the substring `q`
+    var substrRegex = new RegExp(q, 'i');
 
-  cb(matches);
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(terms, function (i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
 
-}
+    cb(matches);
 
-var options = {
-  hint: true,
-  highlight: true,
-  minLength: 2
+  }
+
+  var options = {
+    hint: true,
+    highlight: true,
+    minLength: 2
+  };
+
+  var engine = {
+    name: 'terms',
+    source: findMatches
+  };
+
+  $('.search-field').typeahead(options, engine);
+
 };
-
-var engine = {
-  name: 'terms',
-  source: findMatches
-};
-
-$('.search-field').typeahead(options, engine);
