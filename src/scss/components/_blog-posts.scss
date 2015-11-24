@@ -6,15 +6,11 @@
 
   @include breakpoint(lg) {
     background-color: $white;
-    border: solid 1px #ccc;
+    border: solid 1px $border-light-grey;
     font-size: 0.9em;
-    left: 1em;
     line-height: 1.25em;
     margin: 0 1em 1em 0;
     padding: 1em;
-    position: absolute;
-    top: 470px;
-    width: 22.6%;
   }
 
 }

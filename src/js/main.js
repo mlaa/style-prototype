@@ -3,23 +3,7 @@
 'use strict';
 
 var $ = require('jquery');
-var ScrollSpy = require('scrollspy-js');
-var navigationPage = require('./modules/navigation-page.js');
-
 require('typeahead.js');
-
-var pageMenuSelector = '.page-nav';
-
-// Construct in-page menu.
-var pageMenu = navigationPage(pageMenuSelector, 2, 'Page menu');
-
-if (pageMenu) {
-  // Start scroll spy.
-  exports.scrollspy = new ScrollSpy(pageMenuSelector, {
-    nav: pageMenuSelector + ' a',
-    className: 'current'
-  });
-}
 
 // Add Typeahead to search field
 var substringMatcher = function(strs) {
@@ -62,6 +46,21 @@ $('.search-field').typeahead({
   source: substringMatcher(states)
 });
 
+
+// Bind to special UI elements.
+
 $('.user-profile-link').on('click', function () {
   $('.user-profile-link').toggle();
-})
+});
+
+$('#refine-search-link').on('click', function () {
+  $('.search-field').focus();
+  return true;
+});
+
+$('.search-field').on('keypress', function (e) {
+  if (e.which === 10 || e.which === 13) {
+    window.location = 'search.html';
+    return false;
+  }
+});

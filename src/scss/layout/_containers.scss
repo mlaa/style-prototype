@@ -1,14 +1,30 @@
 // Layout containers
 
-.content {
+.page {
 
   @include breakpoint(lg) {
     align-items: stretch;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  }
+
+}
+
+.content {
+
+  max-width: 700px;
+
+  @include breakpoint(lg) {
+    flex-basis: 70%;
     margin: 1em 0;
+  }
+
+}
+
+.sidebar {
+
+  @include breakpoint(lg) {
+    flex-basis: 30%;
   }
 
 }

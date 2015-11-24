@@ -1,8 +1,10 @@
 // Video player
 
+$player-background-color: #adf;
+
 .video-player {
 
-  background-color: #adf;
+  background-color: $player-background-color;
   padding: 0.5em;
   position: relative;
 

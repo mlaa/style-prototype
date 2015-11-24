@@ -1,13 +1,9 @@
-// Marketing blurbs
+// Citation builder
 
-.marketing-blurb {
+.citation-entry {
 
   background-color: $white;
-  background-image: url($handbook-cover);
-  background-position: left 45px;
-  background-repeat: no-repeat;
   border-bottom: solid 1px $border-light-grey;
-  border-top: solid 1px $border-light-grey;
   margin-top: 0;
   padding: 0.5em;
 
@@ -21,6 +17,10 @@
       margin-top: 0;
     }
 
+    .overflow {
+      display: block;
+    }
+
   }
 
   p {
@@ -29,28 +29,23 @@
 
 }
 
-.buy-the-book {
-  text-align: center;
+.title-of-work-field {
+  border: solid 1px #666;
+  padding: 3px 5px;
 }
 
-.buy-button {
+.cite-submit {
 
-  background-color: $mla-blue;
+  background-color: $white;
+  border: solid 1px $mla-blue;
   border-radius: 5px;
-  color: $white;
+  color: $mla-blue;
   display: inline-block;
+  font-weight: bold;
   margin-left: 3px;
   padding: 3px 6px;
 
-  @include breakpoint(lg) {
-    border-radius: 0.75em;
-    font-size: 1em;
-    margin-left: 0;
-    padding: 5px 1em;
-  }
-
   &:hover {
-    color: $white;
     text-decoration: none;
   }
 
