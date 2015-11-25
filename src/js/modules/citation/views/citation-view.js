@@ -2,19 +2,29 @@
 
 'use strict';
 
-var citationTemplate = require('../templates/citation.tpl');
+var containerTemplate = require('../templates/container-form.tpl');
 
 module.exports = function (Module, App, Backbone) {
 
   var $ = Backbone.$;
+  var _ = Backbone._;
 
   var ItemView = Backbone.Marionette.ItemView.extend({
 
-    tagName: 'li',
-    template: citationTemplate,
+    tagName: 'fieldset',
+    template: containerTemplate,
 
     className: function () {
       return this.model.attributes.type || null;
+    },
+
+    events: {
+      'keyup input': 'updateField'
+    },
+
+    updateField: function (evt) {
+      var $field = $(evt.target);
+      console.log(this.model);
     },
 
     serializeData: function () {
@@ -26,14 +36,26 @@ module.exports = function (Module, App, Backbone) {
   var CollectionView = Backbone.Marionette.CollectionView.extend({
 
     childView: ItemView,
-    tagName: 'ul',
-    className: 'list',
+    tagName: 'div',
+    className: 'citation',
+
+    $ui: {
+      citation: $('#citation-el')
+    },
 
     events: {
-      'click .head': 'loadParentMenu',
-      'click .filter-head': 'editFilters',
-      'click .subhead': 'toggleSessions',
-      'click a': 'saveMenuState'
+      'keyup input': 'updateCitation'
+    },
+
+    updateCitation: function () {
+
+      var citation = _.map(this.collection.models, function (model) {
+        return model.getCitationString();
+      });
+
+
+      console.log(citation);
+      this.$ui.citation.html(citation.join());
     }
 
   });

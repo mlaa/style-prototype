@@ -1,2 +1,1 @@
-<p><input type="text" value="<%= title %>"></p>
-<p><input type="text" value="<%= author %>"></p>
+ <%= title %><%= author %><%= version %><%= number %><%= publisher %><%= pubdate %><%= location %>.
