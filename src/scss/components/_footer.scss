@@ -3,9 +3,12 @@
 .site-footer {
 
   background-color: $mla-blue;
+  bottom: 0;
   color: $white;
-  flex-direction: column;
+  left: 0;
   padding: 1em;
+  position: fixed;
+  width: 100%;
 
   p {
     margin: 0;

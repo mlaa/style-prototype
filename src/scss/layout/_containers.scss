@@ -1,53 +1,22 @@
 // Layout containers
 
 .page {
-
-  @include breakpoint(lg) {
-    align-items: stretch;
-    display: flex;
-    flex-direction: row;
-  }
-
+  padding: 1em 1em 4em 1em;
 }
 
 .content {
-
-  max-width: 700px;
-
   @include breakpoint(lg) {
-    flex-basis: 70%;
-    margin: 1em 0;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-
 }
 
 .sidebar {
 
   @include breakpoint(lg) {
     flex-basis: 30%;
-  }
-
-}
-
-.container {
-  margin: 3em 1em;
-}
-
-.homepage-tile {
-
-  @include breakpoint(lg) {
-
-    box-sizing: border-box;
-    flex-basis: 48%;
-
-    > h4 {
-      margin-top: 0;
-    }
-
-    .overflow {
-      display: block;
-    }
-
   }
 
 }

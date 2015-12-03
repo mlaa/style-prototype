@@ -1,3 +1,8 @@
+<div class="citation-output">
+  <h4>Your citation</h4>
+  <p id="citation-el"></p>
+</div>
+
 <h4>Author</h4>
 <p><input name="author" type="text" value="<%= author %>"></p>
 

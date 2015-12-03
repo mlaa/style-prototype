@@ -23,6 +23,7 @@ module.exports = function (Module, App, Backbone) {
     },
 
     events: {
+      'click .remove-container': 'removeContainer',
       'keyup input': 'updateField'
     },
 
@@ -31,6 +32,12 @@ module.exports = function (Module, App, Backbone) {
       var newAttr = {};
       newAttr[$field.attr('name')] = $field.val();
       this.model.set(newAttr);
+    },
+
+    removeContainer: function () {
+      this.model.collection.remove(this.model);
+      $('.add-container').removeClass('hidden');
+
     },
 
     serializeData: function () {
@@ -44,10 +51,6 @@ module.exports = function (Module, App, Backbone) {
     childView: ItemView,
     tagName: 'div',
     className: 'citation',
-
-    $ui: {
-      citation: $('#citation-el')
-    },
 
     events: {
       'click .add-container': 'addContainer',
@@ -63,7 +66,7 @@ module.exports = function (Module, App, Backbone) {
       var citation = _.map(this.collection.models, function (model) {
         return model.getCitationString();
       });
-      this.$ui.citation.html(citation.join(''));
+      $('#citation-el').html(citation.join(''));
     }
 
   });

@@ -8,13 +8,9 @@ $from-the-book-background-color: $white;
 
 .main-search {
 
-  margin: 0.5em;
-
   @include breakpoint(lg) {
 
     background-color: $background-light-grey;
-    margin: 1em;
-    padding: 1em;
 
     .overflow {
       display: block;

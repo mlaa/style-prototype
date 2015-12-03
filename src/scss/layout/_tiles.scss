@@ -1,0 +1,55 @@
+$faq-background-color: #9cf;
+$blog-background-color: #cf9;
+$citation-background-color: #9fc;
+$chapter-background-color: #fc9;
+$papers-background-color: #f9c;
+$video-background-color: #eee;
+
+.homepage-tile {
+
+  margin-top: 0;
+  padding: 0.5em;
+
+  @include breakpoint(lg) {
+
+    box-sizing: border-box;
+    flex-basis: 30%;
+    margin: 1em 1em 1em 0;
+    padding: 1em;
+
+    > h4 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+
+    .overflow {
+      display: block;
+    }
+
+  }
+
+}
+
+.faq {
+  background-color: $faq-background-color;
+}
+
+.blog {
+  background-color: $blog-background-color;
+}
+
+.citation-entry {
+  background-color: $citation-background-color;
+}
+
+.chapter {
+  background-color: $chapter-background-color;
+}
+
+.papers {
+  background-color: $papers-background-color;
+}
+
+.video-player {
+  background-color: $video-background-color;
+}

@@ -2,14 +2,11 @@
 
 .citation-entry {
 
-  background-color: $white;
-  border-bottom: solid 1px $border-light-grey;
   margin-top: 0;
   padding: 0.5em;
 
   @include breakpoint(lg) {
 
-    border: solid 1px $border-light-grey;
     margin: 1em;
     padding: 1em;
 
@@ -29,9 +26,19 @@
 
 }
 
-.title-of-work-field {
-  border: solid 1px #666;
-  padding: 3px 5px;
+.citation {
+  input {
+    min-width: 20em;
+  }
+}
+
+.citation-output {
+  background-color: $background-light-grey;
+  padding: 1em;
+  position: absolute;
+  right: 2em;
+  top: 7em;
+  width: 25em;
 }
 
 .cite-submit {
