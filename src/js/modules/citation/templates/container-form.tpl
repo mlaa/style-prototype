@@ -20,3 +20,5 @@
 
 <h4>Location</h4>
 <p><input name="location" type="text" value="<%= location %>"></p>
+
+<p><button class="add-container" type="button">Add a container</button></p>

@@ -2,6 +2,7 @@
 
 'use strict';
 
+var sourceTemplate = require('../templates/source-form.tpl');
 var containerTemplate = require('../templates/container-form.tpl');
 
 module.exports = function (Module, App, Backbone) {
@@ -12,10 +13,13 @@ module.exports = function (Module, App, Backbone) {
   var ItemView = Backbone.Marionette.ItemView.extend({
 
     tagName: 'fieldset',
-    template: containerTemplate,
+
+    getTemplate: function () {
+      return this.model.get('container') ? containerTemplate : sourceTemplate;
+    },
 
     className: function () {
-      return this.model.attributes.type || null;
+      return this.model.get('container') ? 'container' : 'source';
     },
 
     events: {
@@ -24,7 +28,9 @@ module.exports = function (Module, App, Backbone) {
 
     updateField: function (evt) {
       var $field = $(evt.target);
-      console.log(this.model);
+      var newAttr = {};
+      newAttr[$field.attr('name')] = $field.val();
+      this.model.set(newAttr);
     },
 
     serializeData: function () {
@@ -44,18 +50,20 @@ module.exports = function (Module, App, Backbone) {
     },
 
     events: {
+      'click .add-container': 'addContainer',
       'keyup input': 'updateCitation'
     },
 
-    updateCitation: function () {
+    addContainer: function (evt) {
+      this.collection.add({});
+      $(evt.target).addClass('hidden');
+    },
 
+    updateCitation: function () {
       var citation = _.map(this.collection.models, function (model) {
         return model.getCitationString();
       });
-
-
-      console.log(citation);
-      this.$ui.citation.html(citation.join());
+      this.$ui.citation.html(citation.join(''));
     }
 
   });
