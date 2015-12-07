@@ -20,6 +20,7 @@ var App = new Backbone.Marionette.Application();
 
 // Add regions.
 App.addRegions({
+  Root: '.page',
   Sidebar: '.sidebar',
   Content: '.content'
 });

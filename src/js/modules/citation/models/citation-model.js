@@ -51,7 +51,7 @@ module.exports = function (Module, App, Backbone) {
         }, '');
 
         // Replace last combinator with period.
-        return '<span>' + citation.replace(/, $/, '. ') + '</span>';
+        return '<span>' + citation.replace(/, $/, '.') + '</span> ';
 
       } else {
 

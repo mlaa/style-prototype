@@ -1,9 +1,13 @@
-$faq-background-color: #9cf;
-$blog-background-color: #cf9;
-$citation-background-color: #9fc;
-$chapter-background-color: #fc9;
-$papers-background-color: #f9c;
-$video-background-color: #eee;
+/* Tiles */
+
+.homepage-tiles {
+  @include breakpoint(lg) {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
 .homepage-tile {
 
@@ -13,14 +17,10 @@ $video-background-color: #eee;
   @include breakpoint(lg) {
 
     box-sizing: border-box;
-    flex-basis: 30%;
-    margin: 1em 1em 1em 0;
+    flex-basis: 31%;
+    margin: 0 0 2em 0;
+    min-height: 13em;
     padding: 1em;
-
-    > h4 {
-      font-size: 1.2em;
-      margin-top: 0;
-    }
 
     .overflow {
       display: block;
@@ -30,26 +30,63 @@ $video-background-color: #eee;
 
 }
 
-.faq {
-  background-color: $faq-background-color;
+.sidebar-tile {
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
-.blog {
-  background-color: $blog-background-color;
+.tile-link {
+
+  background-color: $white;
+  border: solid 1px $mla-blue;
+  position: relative;
+
+  .tile-head {
+    bottom: 0;
+    color: $mla-blue;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    left: 0;
+    line-height: 1.2em;
+    padding: 0.75em 0.5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+  }
+
+  .tile-body {
+    color: $white;
+    display: none;
+    z-index: 10;
+  }
+
+  &:hover {
+
+    background-color: $mla-blue;
+
+    .tile-head {
+      color: $white;
+      text-decoration: none;
+    }
+
+    .tile-body {
+      bottom: 0;
+      display: block;
+      left: 1em;
+      position: absolute;
+      right: 1em;
+    }
+
+  }
+
 }
 
-.citation-entry {
-  background-color: $citation-background-color;
-}
-
-.chapter {
-  background-color: $chapter-background-color;
-}
-
-.papers {
-  background-color: $papers-background-color;
-}
-
-.video-player {
-  background-color: $video-background-color;
+.icon {
+  border: solid 2px $white;
+  border-radius: 0.5em;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+  padding: 2px 5px 0 7px;
 }

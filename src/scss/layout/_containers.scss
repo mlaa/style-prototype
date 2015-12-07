@@ -1,22 +1,43 @@
 // Layout containers
 
-.page {
-  padding: 1em 1em 4em 1em;
+.homepage {
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    flex-basis: 100%;
+  }
+
 }
 
-.content {
+.page {
+
+  padding: 1em 1em 5em 1em;
+
   @include breakpoint(lg) {
     align-items: stretch;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
   }
+
+}
+
+.content {
+
+  @include breakpoint(lg) {
+    flex-basis: 75%;
+  }
+
 }
 
 .sidebar {
 
   @include breakpoint(lg) {
-    flex-basis: 30%;
+    flex-basis: 25%;
+    margin-right: 2em;
   }
 
 }

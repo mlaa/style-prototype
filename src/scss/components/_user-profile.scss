@@ -10,6 +10,7 @@ $avatar-border-color: #007bff;
 
   @include breakpoint(md) {
     top: 20px;
+    right: 1em;
   }
 
   p {

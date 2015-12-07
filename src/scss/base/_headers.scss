@@ -4,9 +4,15 @@
 // adapted from http://typecast.com/blog/a-more-modern-scale-for-web-typography
 
 %header {
+
   font-family: $header-font-family;
   font-weight: $header-bold;
   line-height: 1.3em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
 }
 
 h1 {

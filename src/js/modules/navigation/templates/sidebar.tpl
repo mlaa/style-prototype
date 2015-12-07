@@ -9,12 +9,15 @@
 </div>
 
 <div class="sidebar-tile quick-links">
-  <h4>Quick Links</h4>
+  <h4>Navigation</h4>
   <ul>
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
-    <li><a href="#">Link 3</a></li>
-    <li><a href="#">Link 4</a></li>
-    <li><a href="#">Link 5</a></li>
+    <li><a href="#buy">Buy the Book</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#what-is-mla-style">What Is MLA Style?</a></li>
+    <li><a href="#citation">Create citations</a></li>
+    <li><a href="#blog">Editors’ Blog</a></li>
+    <li><a href="#sample-chapter">Sample chapter</a></li>
+    <li><a href="#sample-papers">Sample papers</a></li>
+    <li><a href="#instructor-resources">Instructor Resources</a></li>
   </ul>
 </div>

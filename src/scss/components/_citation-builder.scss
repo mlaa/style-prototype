@@ -2,32 +2,47 @@
 
 // Citation background colors
 $citation-color-1: #fec;
-$citation-color-2: #cfe;
-$citation-color-3: #cef;
-$citation-color-4: #fce;
+$citation-color-2: #cef;
+$citation-color-3: #fce;
+$citation-color-4: #cfe;
 
-.citation-entry {
-
-  margin-top: 0;
-  padding: 0.5em;
-
+.citation-template {
   @include breakpoint(lg) {
+    align-items: stretch;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 
-    margin: 1em;
-    padding: 1em;
+.citation-container {
+  flex-basis: 60%;
+  order: 1;
+}
 
-    h4 {
-      margin-top: 0;
-    }
+.citation-output {
 
-    .overflow {
-      display: block;
-    }
+  border: solid 1px $background-light-grey;
+  flex-basis: 40%;
+  margin-left: 2em;
+  order: 2;
+  padding: 1em;
 
+  span:nth-child(4n+1) {
+    background-color: $citation-color-1;
   }
 
-  p {
-    margin: 0.5em 0 0.25em 0;
+  span:nth-child(4n+2) {
+    background-color: $citation-color-2;
+  }
+
+  span:nth-child(4n+3) {
+    background-color: $citation-color-3;
+  }
+
+  span:nth-child(4n+4) {
+    background-color: $citation-color-4;
   }
 
 }
@@ -39,22 +54,23 @@ $citation-color-4: #fce;
   }
 
   p {
-    clear: left;
+    display: flex;
     margin: 0.5em 0;
   }
 
   label {
     color: $page-text-color;
-    float: left;
+    flex-basis: 7.5em;
     font-weight: bold;
     padding: 5px 0;
-    width: 6.5em;
   }
 
   input {
 
-    min-width: 20em;
+    box-sizing: border-box;
+    flex-basis: auto;
     padding: 4px 0.3em;
+    width: 100%;
 
     &:focus {
       border: solid 2px $mla-blue;
@@ -98,13 +114,14 @@ $citation-color-4: #fce;
 
   .form-controls {
     margin-top: 1em;
+    margin-bottom: 0;
   }
 
 }
 
 fieldset {
 
-  margin: 0.5em;
+  margin: 0;
   position: relative;
 
   &:last-child {
@@ -141,33 +158,6 @@ fieldset {
 
 .citation-swatch {
   padding: 3px 6px;
-}
-
-.citation-output {
-
-  background-color: $background-light-grey;
-  padding: 1em;
-  position: absolute;
-  right: 2em;
-  top: 7em;
-  width: 25em;
-
-  span:nth-child(4n+1) {
-    background-color: $citation-color-1;
-  }
-
-  span:nth-child(4n+2) {
-    background-color: $citation-color-2;
-  }
-
-  span:nth-child(4n+3) {
-    background-color: $citation-color-3;
-  }
-
-  span:nth-child(4n+4) {
-    background-color: $citation-color-4;
-  }
-
 }
 
 .cite-submit {

@@ -6,8 +6,8 @@ module.exports = function (Module, App, Backbone) {
 
   var showHome = function () {
 
-    // Hide sidebar.
-    App.Sidebar.$el.hide();
+    // Add home page class.
+    App.Root.$el.addClass('homepage');
 
     App.Content.show(Module.Views.Layout, {
       forceShow: true,

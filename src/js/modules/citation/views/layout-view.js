@@ -9,6 +9,7 @@ module.exports = function (Module, App, Backbone) {
   var Layout = Backbone.Marionette.LayoutView.extend({
 
     template: layoutTemplate,
+    className: 'citation-template',
 
     regions: {
       output: '#citation-output',

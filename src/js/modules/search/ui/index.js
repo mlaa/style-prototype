@@ -17,11 +17,17 @@ module.exports = function (Module, App, Backbone) {
     return true;
   });
 
-  $('.search-field').on('keypress', function (e) {
-    if (e.which === 10 || e.which === 13) {
-      Module.router.navigate('search', true);
-      return false;
-    }
-  });
+  // Bind to search submission.
+  var bindSearch = function () {
+    $('.search-field').on('keypress', function (e) {
+      if (e.which === 10 || e.which === 13) {
+        Module.router.navigate('search', true);
+        return false;
+      }
+    });
+  }
+
+  App.Content.on('show', bindSearch);
+  App.Sidebar.on('show', bindSearch);
 
 };

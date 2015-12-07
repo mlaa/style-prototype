@@ -11,6 +11,7 @@ $from-the-book-background-color: $white;
   @include breakpoint(lg) {
 
     background-color: $background-light-grey;
+    padding: 0 0.5em;
 
     .overflow {
       display: block;
@@ -27,6 +28,7 @@ $from-the-book-background-color: $white;
     border: solid 1px $input-border-color-dark;
     border-radius: 0.25em;
     box-sizing: border-box;
+    font-size: 1.2em;
     max-width: 800px;
     padding: 4px 5px 4px 24px;
     width: 100%;
@@ -37,18 +39,31 @@ $from-the-book-background-color: $white;
 
   }
 
+  h4 {
+    color: $page-text-minor-color;
+    font-size: 2em;
+    line-height: 1.2em;
+    padding-top: 0.25em;
+  }
+
   form,
   fieldset {
     margin: 0;
+  }
+
+  &:hover {
+    h4 {
+      color: $black;
+    }
   }
 
 }
 
 .instructions {
   font-size: 0.9em;
+  font-weight: bold;
   line-height: 1.25em;
-  margin: 0.5em 0 0 0;
-  text-align: right;
+  margin: 0.75em 0 0 0;
 }
 
 .twitter-typeahead,
