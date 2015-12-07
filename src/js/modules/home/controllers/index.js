@@ -4,13 +4,15 @@
 
 module.exports = function (Module, App, Backbone) {
 
-  var homeTemplate = require('../templates/home.tpl');
-
-  // Generate search results view.
   var showHome = function () {
-    // Append the views to the content region.
-    App.Content.$el.html(homeTemplate());
 
+    // Hide sidebar.
+    App.Sidebar.$el.hide();
+
+    App.Content.show(Module.Views.Layout, {
+      forceShow: true,
+      preventDestroy: true
+    });
   };
 
   return Backbone.Marionette.Controller.extend({

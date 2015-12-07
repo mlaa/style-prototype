@@ -4,6 +4,8 @@ module.exports = function (Module, App, Backbone) {
 
   'use strict';
 
+  require('./views/layout-view.js')(Module, App, Backbone);
+
   var Router = require('./routers')(Module, App, Backbone);
   var Controller = require('./controllers')(Module, App, Backbone);
 
