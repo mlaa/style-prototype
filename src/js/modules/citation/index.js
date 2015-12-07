@@ -1,4 +1,4 @@
-/* Session module */
+/* Citation module */
 
 module.exports = function (Module, App, Backbone) {
 
@@ -6,6 +6,7 @@ module.exports = function (Module, App, Backbone) {
 
   require('./models/citation-model.js')(Module, App, Backbone);
   require('./views/citation-view.js')(Module, App, Backbone);
+  require('./views/layout-view.js')(Module, App, Backbone);
 
   var Router = require('./routers')(Module, App, Backbone);
   var Controller = require('./controllers')(Module, App, Backbone);
