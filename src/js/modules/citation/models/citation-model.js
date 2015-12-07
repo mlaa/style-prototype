@@ -20,6 +20,7 @@ module.exports = function (Module, App, Backbone) {
         pubdate: null,
         location: null,
         container: true,
+        containerNumber: 1,
         order: this.collection.nextOrder()
       };
     },
@@ -50,7 +51,7 @@ module.exports = function (Module, App, Backbone) {
         }, '');
 
         // Replace last combinator with period.
-        return citation.replace(/, $/, '. ');
+        return '<span>' + citation.replace(/, $/, '. ') + '</span>';
 
       } else {
 
@@ -79,7 +80,17 @@ module.exports = function (Module, App, Backbone) {
     model: Model,
     comparator: 'order',
 
-    nextOrder: function() {
+    initialize: function () {
+      this.bind('add remove', this.updateNumbers);
+    },
+
+    updateNumbers: function () {
+      this.each(function (model, i) {
+        model.set('containerNumber', i);
+      });
+    },
+
+    nextOrder: function () {
       return (!this.length) ? 1 : this.last().get('order') + 1;
     }
 

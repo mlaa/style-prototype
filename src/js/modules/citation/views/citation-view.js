@@ -36,8 +36,6 @@ module.exports = function (Module, App, Backbone) {
 
     removeContainer: function () {
       this.model.collection.remove(this.model);
-      $('.add-container').removeClass('hidden');
-
     },
 
     serializeData: function () {
@@ -57,9 +55,12 @@ module.exports = function (Module, App, Backbone) {
       'keyup input': 'updateCitation'
     },
 
-    addContainer: function (evt) {
+    addContainer: function () {
       this.collection.add({});
-      $(evt.target).addClass('hidden');
+    },
+
+    onRemoveChild: function () {
+      this.updateCitation();
     },
 
     updateCitation: function () {

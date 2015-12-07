@@ -1,12 +1,13 @@
-<div class="citation-output">
-  <h4>Your citation</h4>
-  <p id="citation-el"></p>
-</div>
+<p>
+  <label for="container-author-<%= order %>">Author</label>
+  <input id="container-author-<%= order %>" name="author" type="text" value="<%= author %>">
+</p>
 
-<h4>Author</h4>
-<p><input name="author" type="text" value="<%= author %>"></p>
+<p>
+  <label for="container-title-<%= order %>">Title</label>
+  <input id="container-title-<%= order %>" name="title" type="text" value="<%= title %>" placeholder="Title of source">
+</p>
 
-<h4>Title of source</h4>
-<p><input name="title" type="text" value="<%= title %>"></p>
-
-<p><button class="add-container" type="button">Add a container</button></p>
+<p class="form-controls">
+  <button class="add-container" type="button">+ Add a container</button>
+</p>

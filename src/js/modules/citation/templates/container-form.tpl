@@ -1,27 +1,41 @@
-<h3>Container <%= order - 1 %></h3>
-
-<h4>Title of container</h4>
-<p><input name="title" type="text" value="<%= title %>"></p>
-
-<h4>Other contributors</h4>
-<p><input name="author" type="text" value="<%= author %>"></p>
-
-<h4>Version</h4>
-<p><input name="version" type="text" value="<%= version %>"></p>
-
-<h4>Number</h4>
-<p><input name="number" type="text" value="<%= number %>"></p>
-
-<h4>Publisher</h4>
-<p><input name="publisher" type="text" value="<%= publisher %>"></p>
-
-<h4>Publication date</h4>
-<p><input name="pubdata" type="text" value="<%= pubdate %>"></p>
-
-<h4>Location</h4>
-<p><input name="location" type="text" value="<%= location %>"></p>
+<h3><span class="citation-swatch">Container <%= containerNumber %></span></h3>
 
 <p>
-  <button class="add-container" type="button">Add a container</button>
-  <button class="remove-container" type="button">Remove this container</button>
+  <label for="container-title-<%= order %>">Title</label>
+  <input id="container-title-<%= order %>" name="title" type="text" value="<%= title %>" placeholder="Title of container">
+</p>
+
+<p>
+  <label for="container-author-<%= order %>">Contributor</label>
+  <input id="container-author-<%= order %>" name="author" type="text" value="<%= author %>" placeholder="Other contributors">
+</p>
+
+<p>
+  <label for="container-version-<%= order %>">Version</label>
+  <input id="container-version-<%= order %>" name="version" type="text" value="<%= version %>">
+</p>
+
+<p>
+  <label for="container-number-<%= order %>">Number</label>
+  <input id="container-number-<%= order %>" name="number" type="text" value="<%= number %>">
+</p>
+
+<p>
+  <label for="container-publisher-<%= order %>">Publisher</label>
+  <input id="container-publisher-<%= order %>" name="publisher" type="text" value="<%= publisher %>">
+</p>
+
+<p>
+  <label for="container-pubdate-<%= order %>">Date</label>
+  <input id="container-pubdate-<%= order %>" name="pubdate" type="text" value="<%= pubdate %>" placeholder="Publication date">
+</p>
+
+<p>
+  <label for="container-location-<%= order %>">Location</label>
+  <input id="container-location-<%= order %>" name="location" type="text" value="<%= location %>" placeholder="Page numbers, DOI, URL">
+</p>
+
+<p class="form-controls">
+  <button class="add-container" type="button">+ Add a container</button>
+  <button class="remove-container" type="button"></button>
 </p>
