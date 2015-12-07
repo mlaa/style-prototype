@@ -1,0 +1,30 @@
+/* Blog */
+
+.page-blog {
+  max-width: 40em;
+}
+
+.blog-meta {
+
+  .post-date {
+    color: $page-text-minor-color;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .tag {
+
+    background-color: $background-light-grey;
+    border-radius: 3px;
+    color: $page-text-minor-color;
+    margin-left: 5px;
+    padding: 2px 8px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+}

@@ -29,47 +29,52 @@ module.exports = function (Module, App, Backbone) {
 
       var modelAttrs = this.attributes;
 
-      if (this.attributes.container) {
+      var containerAttrs = [
+        'title',
+        'author',
+        'version',
+        'number',
+        'publisher',
+        'pubdate',
+        'location'
+      ];
 
-        var containrAttrs = [
-          'title',
-          'author',
-          'version',
-          'number',
-          'publisher',
-          'pubdate',
-          'location'
-        ];
+      var sourceAttrs = [
+        'author',
+        'title'
+      ];
 
-        // Filter attributes for valid string values, then reduce to a
-        // citation string.
-        var citation = _.filter(containrAttrs, function (attr) {
-          var val = modelAttrs[attr];
-          return (typeof val === 'string' && val.replace(/\s/g, '') !== '');
-        }).reduce(function (str, attr) {
-          return str + modelAttrs[attr] + ', ';
-        }, '');
+      var formatAttribute = function (attr, str, separator) {
 
-        // Replace last combinator with period.
-        return '<span>' + citation.replace(/, $/, '.') + '</span> ';
+        if (attr === 'title') {
+          if ((/^[\"“]/.test(str) && /[\"“]$/.test(str))) {
+            return str.replace(/^[\"]/, '“').replace(/[\"”]$/, separator + '”');
+          } else {
+            return '<em>' + str + '</em>' + separator;
+          }
+        } else {
+          return str + separator;
+        }
 
-      } else {
+      };
 
-        var sourceAttrs = [
-          'author',
-          'title'
-        ];
+      var filterAttrs = (this.attributes.container) ? containerAttrs : sourceAttrs;
 
-        // Filter attributes for valid string values, then reduce to a
-        // citation string.
-        return _.filter(sourceAttrs, function (attr) {
-          var val = modelAttrs[attr];
-          return (typeof val === 'string' && val.replace(/\s/g, '') !== '');
-        }).reduce(function (str, attr) {
-          return str + modelAttrs[attr] + '. ';
-        }, '');
+      // Filter attributes for valid string values, then reduce to a
+      // citation string.
+      var attrs = _.filter(filterAttrs, function (attr) {
+        var val = modelAttrs[attr];
+        return (typeof val === 'string' && val.replace(/\s/g, '') !== '');
+      });
 
-      }
+      var last = attrs.length - 1;
+      var citation = attrs.map(function (attr, i) {
+        var separator = (i === last) ? '.' : ',';
+        return formatAttribute(attr, modelAttrs[attr], separator);
+      });
+
+      // Wrap in span.
+      return '<span>' + citation.join(' ') + '</span> ';
 
     }
 

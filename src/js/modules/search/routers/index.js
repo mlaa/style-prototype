@@ -5,7 +5,7 @@
 module.exports = function (Module, App, Backbone) {
   return Backbone.Marionette.AppRouter.extend({
     appRoutes: {
-      'search': 'showSearchResults'
+      'internal/style-prototype/search': 'showSearchResults'
     }
   });
 };

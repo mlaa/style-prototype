@@ -4,6 +4,6 @@
 </div>
 <div class="citation-container">
   <h3>Citation Template</h3>
-  <p>Build your works cited using the <strong>core elements</strong> (<em>MLA Handbook</em>, p. 28). Add containers from smallest to largest.</p>
+  <p>Build your works cited using the <strong>core elements</strong> (<em>MLA Handbook</em>, <span class="no-break">p. 28</span>). Add containers from smallest to largest.</p>
   <div id="citation-form"></div>
 </div>

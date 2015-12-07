@@ -21,11 +21,11 @@ module.exports = function (Module, App, Backbone) {
   var bindSearch = function () {
     $('.search-field').on('keypress', function (e) {
       if (e.which === 10 || e.which === 13) {
-        Module.router.navigate('search', true);
+        Module.router.navigate('internal/style-prototype/search', true);
         return false;
       }
     });
-  }
+  };
 
   App.Content.on('show', bindSearch);
   App.Sidebar.on('show', bindSearch);

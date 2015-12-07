@@ -9,5 +9,5 @@
 </p>
 
 <p class="form-controls">
-  <button class="add-container" type="button">+ Add a container</button>
+  <button class="add-container" type="button">+ Add a larger container</button>
 </p>
