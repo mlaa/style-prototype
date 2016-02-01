@@ -6,9 +6,6 @@ module.exports = function (Module, App, Backbone) {
 
   var showCitationForm = function () {
 
-    // Remove home page class.
-    App.Root.$el.removeClass('homepage');
-
     App.Content.show(Module.Views.Layout, {
       forceShow: true,
       preventDestroy: true

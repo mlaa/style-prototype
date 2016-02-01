@@ -7,27 +7,29 @@ $citation-color-3: #fce;
 $citation-color-4: #cfe;
 
 .citation-template {
-  @include breakpoint(lg) {
-    align-items: stretch;
-    display: flex;
-    flex-basis: auto;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.citation-container {
-  flex-basis: 60%;
-  order: 1;
+  max-width: 30em;
+  padding: 1.5em;
+  padding-bottom: 7em;
 }
 
 .citation-output {
 
-  border: solid 1px $background-light-grey;
-  flex-basis: 40%;
-  margin-left: 2em;
-  order: 2;
+  background-color: $white;
+  border-top: solid 2px $light-grey;
+  bottom: 3.5em;
+  color: $black;
+  font-family: $header-secondary-font-family;
+  left: 0;
+  min-height: 3em;
   padding: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 250;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 
   span:nth-child(4n+2) {
     background-color: $citation-color-1;
@@ -47,76 +49,42 @@ $citation-color-4: #cfe;
 
 }
 
-.citation {
+.add-container {
+  display: none;
+  padding: 0.75em;
+  width: 100%;
+}
 
-  h3 {
-    margin: 0 0 0.5em -6px;
+.remove-container {
+
+  background-color: transparent;
+  background-image: url($trash-icon);
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  border: 0;
+  height: 32px;
+  opacity: 0.4;
+  outline: none;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  width: 32px;
+
+  &:hover {
+    opacity: 1;
   }
 
-  p {
-    display: flex;
-    margin: 0.5em 0;
-  }
+}
 
-  label {
-    color: $page-text-color;
-    flex-basis: 7.5em;
-    font-weight: bold;
-    padding: 5px 0;
-  }
+.form-controls {
+  margin: 0.5em 0 0 0;
+}
 
-  input {
-
-    box-sizing: border-box;
-    flex-basis: auto;
-    padding: 4px 0.3em;
-    width: 100%;
-
-    &:focus {
-      border: solid 2px $mla-blue;
-      outline: none;
-    }
-
-  }
-
-  .add-container {
-    background-color: $background-light-grey;
-    border-bottom-color: $border-light-grey;
-    border-radius: 0;
-    display: none;
-    font-weight: bold;
-    outline: none;
-    padding: 0.5em;
-    width: 100%;
-  }
-
-  .remove-container {
-
-    background-color: transparent;
-    background-image: url($trash-icon);
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    border: 0;
-    height: 32px;
-    opacity: 0.4;
-    outline: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 32px;
-
-    &:hover {
-      opacity: 1;
-    }
-
-  }
-
-  .form-controls {
-    margin-bottom: 0;
-    margin-top: 1em;
-  }
-
+.container,
+.source {
+  border: solid 1px $dark-grey;
+  margin: 2em 0;
 }
 
 fieldset {
@@ -124,9 +92,13 @@ fieldset {
   margin: 0;
   position: relative;
 
+  .citation-swatch {
+    background-color: $light-grey;
+  }
+
   &:last-child {
     .add-container {
-      display: inline-block;
+      display: block;
     }
   }
 
@@ -157,7 +129,7 @@ fieldset {
 }
 
 .citation-swatch {
-  padding: 3px 6px;
+  padding: 3px 15px 3px 10px;
 }
 
 .cite-submit {
@@ -173,6 +145,77 @@ fieldset {
 
   &:hover {
     text-decoration: none;
+  }
+
+}
+
+.citation {
+
+  h3 {
+    line-height: 1.5em;
+  }
+
+  .field {
+    display: flex;
+    flex-flow: column-reverse;
+    margin: 0 0 0.25em 0;
+  }
+
+  label {
+    color: darken($light-grey, 15%);
+    padding: 5px 0 3px 0;
+  }
+
+  label,
+  input {
+    font-family: $header-secondary-font-family;
+    margin: 0 10px;
+    touch-action: manipulation;
+    transition: all 0.2s;
+  }
+
+  input {
+    -webkit-appearance: none;
+    border: 0;
+    border-bottom: solid 1px $light-grey;
+    border-radius: 0;
+    cursor: text;
+    font-size: 1.4em;
+    padding: 3px 0;
+
+    &:focus {
+      border-bottom: 1px solid $mla-blue;
+      outline: 0;
+    }
+
+  }
+
+  input:placeholder-shown + label {
+    cursor: text;
+    max-width: 40em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translate(0, 2.125rem) scale(1.5);
+    transform-origin: left bottom;
+    white-space: nowrap;
+  }
+
+  ::-webkit-input-placeholder {
+    font-family: $header-secondary-font-family;
+    opacity: 0;
+    transition: inherit;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+
+  input:not(:placeholder-shown) + label,
+  input:focus + label {
+    color: $dark-grey;
+    cursor: pointer;
+    font-weight: bold;
+    transform: translate(0, 0) scale(1);
   }
 
 }

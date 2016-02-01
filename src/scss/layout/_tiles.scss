@@ -49,77 +49,92 @@
 
 }
 
-@mixin odd-tile {
+.tile-link,
+.tile-content {
+  background-color: $white;
+  border: solid 2px $tile-primary-color-1;
+  font-family: $header-secondary-font-family;
+  position: relative;
+}
 
-  &:nth-child(odd) {
+.tile-link {
 
-    border-color: $tile-primary-color-2;
+  &:hover {
 
-    .tile-head {
-      color: $tile-primary-color-2;
+    background-color: $tile-primary-color-1;
+
+    .tile-link-head {
+      color: $white;
+      text-decoration: none;
     }
 
     .tile-body {
-      color: $tile-primary-color-2;
-    }
-
-    &:hover {
-      background-color: $tile-primary-color-2;
-
-      .tile-head {
-        color: $white;
-      }
-
-      .tile-body {
-        color: $white;
-      }
-
+      color: $white;
     }
 
   }
 
 }
 
-.tile-link {
-
-  @include odd-tile;
-
-  background-color: $white;
-  border: solid 2px $tile-primary-color-1;
+.tile-head,
+.tile-link-head {
   font-family: $header-secondary-font-family;
-  position: relative;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0.3em 0;
+}
 
-  .tile-head {
-    bottom: 0;
-    color: $tile-primary-color-1;
-    display: block;
-    font-size: 2em;
-    font-weight: bold;
-    left: 0;
-    line-height: 1.2em;
-    padding: 0.75em 0.5em;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 100;
+.tile-link-head {
+  bottom: 0;
+  color: $tile-primary-color-1;
+  display: block;
+  left: 0;
+  padding: 0.75em 0.5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.tile-body {
+  bottom: 0;
+  color: $tile-primary-color-1;
+  left: 1em;
+  position: absolute;
+  right: 1em;
+  z-index: 10;
+}
+
+.tile-content {
+
+  background-color: $light-grey;
+  border-color: $light-grey;
+
+  .tile-body {
+    color: $black;
+  }
+
+}
+
+.tile-alternate {
+
+  border-color: $tile-primary-color-2;
+
+  .tile-link-head {
+    color: $tile-primary-color-2;
   }
 
   .tile-body {
-    bottom: 0;
-    color: $tile-primary-color-1;
-    left: 1em;
-    position: absolute;
-    right: 1em;
-    z-index: 10;
+    color: $tile-primary-color-2;
   }
 
   &:hover {
+    background-color: $tile-primary-color-2;
 
-    background-color: $tile-primary-color-1;
-
-    .tile-head {
+    .tile-link-head {
       color: $white;
-      text-decoration: none;
     }
 
     .tile-body {

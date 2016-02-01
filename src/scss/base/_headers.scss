@@ -39,6 +39,8 @@ h1 {
 
 h2 {
 
+  color: $header-level-1-color;
+
   @extend %header;
   margin: 1.2em 0 0.5em 0;
 
@@ -61,6 +63,7 @@ h2 {
 h3 {
 
   @extend %header;
+  font-family: $header-secondary-font-family;
   margin: 1.2em 0 0.5em 0;
 
   @include breakpoint(md) {
@@ -82,6 +85,7 @@ h3 {
 h4 {
 
   @extend %header;
+  font-family: $header-secondary-font-family;
   margin: 0.5em 0;
 
   @include breakpoint(md) {

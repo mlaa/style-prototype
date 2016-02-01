@@ -4,7 +4,10 @@
 $black: #000;
 $white: #fff;
 $mla-blue: #06c;
+$light-mla-blue: #79b;
+
 $light-grey: #ccc;
+$lightest-grey: #eee;
 $dark-grey: #666;
 
 // Page colors
@@ -44,7 +47,7 @@ $recessed-background-color: #eee;
 // Input colors
 $input-border-color-light: #eee;
 $input-border-color-dark: #999;
-$input-border-color-active: #c6401d;
+$input-border-color-active: $mla-blue;
 
 // Button colors
 $button-text-color: $white;

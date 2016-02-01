@@ -95,8 +95,11 @@ module.exports = function (Module, App, Backbone) {
       });
     },
 
+    counter: 0,
+
     nextOrder: function () {
-      return (!this.length) ? 1 : this.last().get('order') + 1;
+      this.counter = this.counter + 1;
+      return this.counter;
     }
 
   });

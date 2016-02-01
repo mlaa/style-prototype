@@ -1,14 +1,27 @@
 // Blog
 
+.page-blog-container {
+
+  max-width: 70em;
+
+  @include breakpoint(lg) {
+    display: flex;
+  }
+
+}
+
 .page-blog {
 
   background-color: $white;
   line-height: 1.5em;
   padding: 1.5em;
 
+  @include breakpoint(lg) {
+    flex-basis: 60%;
+  }
+
   h2 {
-    color: $header-level-1-color;
-    margin: 0 0 0.5em 0;
+    margin-bottom: 1em;
     padding-top: 0.5em;
   }
 
@@ -16,46 +29,85 @@
     color: $header-level-4-color;
     font-family: $header-secondary-font-family;
     font-weight: normal;
-    margin: 2em 0 0.5em 0;
+    margin: 2em 0 1em 0;
+  }
+
+}
+
+.page-blog-entry {
+  margin: 3em 0;
+}
+
+.page-blog-sidebar {
+
+  font-family: $header-secondary-font-family;
+  padding: 3em;
+
+  @include breakpoint(lg) {
+    flex-basis: 30%;
+  }
+
+  .blog-meta {
+    margin: 0;
+  }
+
+}
+
+.blog-title {
+
+  .tag {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin-left: 0.5em;
+    vertical-align: top;
   }
 
 }
 
 .blog-meta {
-
   color: $page-text-minor-color;
   font-family: $header-secondary-font-family;
+  line-height: 2.3em;
   margin: 1.5em 0;
+}
 
-  .post-date {
+.post-date {
 
-    border: solid 1px $dark-grey;
-    border-radius: 3px;
-    color: $dark-grey;
-    margin-right: 5px;
-    padding: 3px 8px;
+  border: solid 1px $dark-grey;
+  border-radius: 3px;
+  color: $dark-grey;
+  font-family: $header-secondary-font-family;
+  margin-right: 5px;
+  padding: 3px 8px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
     text-decoration: none;
-
-    &:hover {
-      background-color: $dark-grey;
-      color: $white;
-    }
-
   }
 
-  .tag {
+}
 
-    border: solid 1px $mla-blue;
-    border-radius: 3px;
-    margin-right: 5px;
-    padding: 3px 8px;
+.tag {
+
+  border: solid 1px $mla-blue;
+  border-radius: 3px;
+  font-family: $header-secondary-font-family;
+  margin-right: 5px;
+  padding: 3px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $mla-blue;
+    color: $white;
     text-decoration: none;
+  }
 
-    &:hover {
-      background-color: $mla-blue;
-      color: $white;
-    }
-
+  .count {
+    color: $light-mla-blue;
   }
 
 }

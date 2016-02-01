@@ -42,6 +42,11 @@ module.exports = function (Module, App, Backbone) {
     source: findMatches
   };
 
-  $('.search-field').typeahead(options, engine);
+  // Bind to search field.
+  var bindSearch = function () {
+    $('.typeahead-unbound').typeahead(options, engine).removeClass('typeahead-unbound');
+  };
+
+  App.Content.on('show', bindSearch);
 
 };

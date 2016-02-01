@@ -13,21 +13,20 @@ module.exports = function (Module, App, Backbone) {
   });
 
   $('#refine-search-link').on('click', function () {
-    $('.search-field').focus();
+    $('.site-search-field').focus();
     return true;
   });
 
   // Bind to search submission.
   var bindSearch = function () {
-    $('.search-field').on('keypress', function (e) {
+    $('.search-unbound').on('keypress', function (e) {
       if (e.which === 10 || e.which === 13) {
-        Module.router.navigate('internal/style-prototype/search', true);
+        Module.router.navigate('search', true);
         return false;
       }
-    });
+    }).removeClass('search-unbound');
   };
 
   App.Content.on('show', bindSearch);
-  App.Sidebar.on('show', bindSearch);
 
 };

@@ -15,13 +15,22 @@ module.exports = function (Module, App, Backbone) {
       var href = $(this).attr('href');
 
       if (href && href.charAt(0) === '#') {
+
         // Disable link and route manually.
         e.preventDefault();
+
+        href = (href === '#') ? '/' : href;
         Backbone.history.navigate(href.substring(1), true);
+        window.scrollTo(0, 0);
+
       }
 
     }
 
+  });
+
+  Backbone.history.on('route', function (route, router) {
+    App.Body.$el.toggleClass('homepage', router === 'showHome');
   });
 
 };

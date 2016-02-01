@@ -1,17 +1,17 @@
-/* Layout view */
+/* About view */
 
 'use strict';
 
 module.exports = function (Module, App, Backbone) {
 
-  var layoutTemplate = require('../templates/home.tpl');
+  var layoutTemplate = require('../templates/about.tpl');
 
   var Layout = Backbone.Marionette.LayoutView.extend({
     template: layoutTemplate,
-    className: 'homepage-tiles'
+    className: 'page-generic'
   });
 
   Module.Views = Module.Views || {};
-  Module.Views.Layout = new Layout();
+  Module.Views.About = new Layout();
 
 };

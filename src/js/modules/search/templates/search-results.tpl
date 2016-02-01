@@ -1,4 +1,4 @@
-<div class="search-results">
+<div class="search-results page-generic">
 
   <h2>There were 6 search results for <span class="hilite">youtube</span>.</h2>
 
