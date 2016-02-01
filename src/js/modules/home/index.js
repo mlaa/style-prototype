@@ -6,6 +6,7 @@ module.exports = function (Module, App, Backbone) {
 
   require('./views/layout-view.js')(Module, App, Backbone);
   require('./views/blog-view.js')(Module, App, Backbone);
+  require('./views/faq-view.js')(Module, App, Backbone);
   require('./views/sample-papers-view.js')(Module, App, Backbone);
 
   var Router = require('./routers')(Module, App, Backbone);

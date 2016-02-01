@@ -7,6 +7,7 @@ module.exports = function (Module, App, Backbone) {
     appRoutes: {
       'internal/style-prototype/': 'showHome',
       'internal/style-prototype/blog': 'showBlog',
+      'internal/style-prototype/faq': 'showFaq',
       'internal/style-prototype/sample-papers': 'showSamplePapers'
     }
   });

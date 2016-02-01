@@ -2,7 +2,9 @@
 
 .homepage {
 
-  .sidebar {
+  background-color: $nav-background-color;
+
+  .sidebar, .page-banner {
     display: none;
   }
 
@@ -10,11 +12,17 @@
     flex-basis: 100%;
   }
 
+  .page {
+    padding: 1.5em;
+    padding-bottom: 3em;
+  }
+
 }
 
 .page {
 
-  padding: 1em 1em 5em 1em;
+  padding: 0;
+  padding-bottom: 3em;
 
   @include breakpoint(lg) {
     align-items: stretch;
@@ -36,8 +44,8 @@
 .sidebar {
 
   @include breakpoint(lg) {
-    flex-basis: 25%;
-    margin-right: 2em;
+    flex-basis: 30%;
+    margin-right: 3em;
   }
 
 }

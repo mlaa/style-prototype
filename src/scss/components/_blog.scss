@@ -1,28 +1,59 @@
-/* Blog */
+// Blog
 
 .page-blog {
-  max-width: 40em;
+
+  background-color: $white;
+  line-height: 1.5em;
+  padding: 1.5em;
+
+  h2 {
+    color: $header-level-1-color;
+    margin: 0 0 0.5em 0;
+    padding-top: 0.5em;
+  }
+
+  h3 {
+    color: $header-level-4-color;
+    font-family: $header-secondary-font-family;
+    font-weight: normal;
+    margin: 2em 0 0.5em 0;
+  }
+
 }
 
 .blog-meta {
 
+  color: $page-text-minor-color;
+  font-family: $header-secondary-font-family;
+  margin: 1.5em 0;
+
   .post-date {
-    color: $page-text-minor-color;
-    font-weight: bold;
-    margin-right: 8px;
+
+    border: solid 1px $dark-grey;
+    border-radius: 3px;
+    color: $dark-grey;
+    margin-right: 5px;
+    padding: 3px 8px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $dark-grey;
+      color: $white;
+    }
+
   }
 
   .tag {
 
-    background-color: $background-light-grey;
+    border: solid 1px $mla-blue;
     border-radius: 3px;
-    color: $page-text-minor-color;
-    margin-left: 5px;
-    padding: 2px 8px;
+    margin-right: 5px;
+    padding: 3px 8px;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      background-color: $mla-blue;
+      color: $white;
     }
 
   }

@@ -1,0 +1,19 @@
+// Toolbar
+
+.toolbar {
+
+  background-color: $black;
+  height: 1.3em;
+  padding: 0.25em 0.5em;
+  position: relative;
+
+  @include breakpoint(lg) {
+    padding: 1.3em 1em 0.5em 1em;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+}

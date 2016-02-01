@@ -7,7 +7,7 @@ module.exports = function (Module, App, Backbone) {
   var showHome = function () {
 
     // Add home page class.
-    App.Root.$el.addClass('homepage');
+    App.Body.$el.addClass('homepage');
 
     App.Content.show(Module.Views.Layout, {
       forceShow: true,
@@ -19,9 +19,31 @@ module.exports = function (Module, App, Backbone) {
   var showBlog = function () {
 
     // Add home page class.
-    App.Root.$el.removeClass('homepage');
+    App.Body.$el.removeClass('homepage');
 
     App.Content.show(Module.Views.Blog, {
+      forceShow: true,
+      preventDestroy: true
+    });
+
+    App.Sidebar.show(Module.Views.BlogSidebar, {
+      forceShow: true,
+      preventDestroy: true
+    });
+
+  };
+
+  var showFaq = function () {
+
+    // Add home page class.
+    App.Body.$el.removeClass('homepage');
+
+    App.Content.show(Module.Views.Faq, {
+      forceShow: true,
+      preventDestroy: true
+    });
+
+    App.Sidebar.show(Module.Views.FaqSidebar, {
       forceShow: true,
       preventDestroy: true
     });
@@ -31,7 +53,7 @@ module.exports = function (Module, App, Backbone) {
   var showSamplePapers = function () {
 
     // Add home page class.
-    App.Root.$el.removeClass('homepage');
+    App.Body.$el.removeClass('homepage');
 
     App.Content.show(Module.Views.SamplePapers, {
       forceShow: true,
@@ -43,6 +65,7 @@ module.exports = function (Module, App, Backbone) {
   return Backbone.Marionette.Controller.extend({
     showHome: showHome,
     showBlog: showBlog,
+    showFaq: showFaq,
     showSamplePapers: showSamplePapers
   });
 

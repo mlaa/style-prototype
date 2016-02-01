@@ -2,13 +2,15 @@
 
 .site-footer {
 
-  background-color: $mla-blue;
+  background-color: $footer-background-color;
   bottom: 0;
-  color: $white;
+  color: $footer-text-color;
+  font-family: $header-secondary-font-family;
   left: 0;
   padding: 1em;
   position: fixed;
   width: 100%;
+  z-index: 200;
 
   p {
     margin: 0;
@@ -17,7 +19,7 @@
   }
 
   a {
-    color: $white;
+    color: $footer-text-color;
     text-decoration: underline;
   }
 

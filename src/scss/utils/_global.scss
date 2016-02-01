@@ -16,7 +16,7 @@
   border-left: 2px solid $input-border-color-dark;
   border-radius: 3px;
 
-  &.search:before {
+  &.search::before {
     content: 'h';
   }
 

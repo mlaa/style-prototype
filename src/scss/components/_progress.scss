@@ -29,8 +29,8 @@ $progress-shadow-color: #f5f5f5;
         width: 7em;
       }
 
-      span:before,
-      a:before {
+      span::before,
+      a::before {
         background: $progress-active-color;
         border-radius: 100%;
         box-shadow: 0 0 0 3px $progress-shadow-color;
@@ -47,8 +47,8 @@ $progress-shadow-color: #f5f5f5;
 
       + li > {
 
-        span:after,
-        a:after {
+        span::after,
+        a::after {
           background: $progress-active-color;
           border: solid $progress-shadow-color;
           border-width: 2px 0;
@@ -79,13 +79,13 @@ $progress-shadow-color: #f5f5f5;
 
     ~ li {
 
-      span:before,
-      a:before {
+      span::before,
+      a::before {
         background-color: $progress-background-color;
       }
 
-      span:after,
-      a:after {
+      span::after,
+      a::after {
         background-color: $progress-shadow-color;
         box-shadow: none;
       }

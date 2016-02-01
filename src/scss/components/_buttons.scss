@@ -4,8 +4,9 @@
 
   background-color: $background-color;
   border: 0;
-  border-bottom: 2px solid darken($background-color, 20%);
-  color: $color;
+  border-radius: 0;
+  color: $button-text-color;
+  font-family: $header-secondary-font-family;
   padding: 0.5em 0.75em;
   display: inline-block;
   text-decoration: none;

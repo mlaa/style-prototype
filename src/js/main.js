@@ -20,6 +20,7 @@ var App = new Backbone.Marionette.Application();
 
 // Add regions.
 App.addRegions({
+  Body: 'body',
   Root: '.page',
   Sidebar: '.sidebar',
   Content: '.content'
@@ -27,7 +28,6 @@ App.addRegions({
 
 // Load modules.
 App.module('Home', require('./modules/home'));
-App.module('Navigation', require('./modules/navigation'));
 App.module('Citation', require('./modules/citation'));
 App.module('Links', require('./modules/links'));
 App.module('Search', require('./modules/search'));
