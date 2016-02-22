@@ -8,6 +8,7 @@
     "backbone.marionette": "^2.4.4",
     "fastclick": "^1.0.6",
     "jquery": "^2.1.4",
+    "modui-popup": "^2.0.1",
     "scrollspy-js": "0.1.1",
     "typeahead.js": "^0.11.1",
     "underscore": "^1.8.3"

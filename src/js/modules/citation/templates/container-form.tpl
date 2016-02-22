@@ -30,7 +30,7 @@
   <label for="container-pubdate-<%= order %>">Date</label>
 </p>
 
-<p class="field">
+<p class="field final-element">
   <input id="container-location-<%= order %>" name="location" type="text" value="<%= location %>" placeholder="Page numbers, DOI, URL">
   <label for="container-location-<%= order %>">Location</label>
 </p>

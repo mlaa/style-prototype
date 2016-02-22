@@ -2,6 +2,8 @@
 
 'use strict';
 
+var popup = require('modui-popup');
+
 var sourceTemplate = require('../templates/source-form.tpl');
 var containerTemplate = require('../templates/container-form.tpl');
 
@@ -24,6 +26,8 @@ module.exports = function (Module, App, Backbone) {
 
     events: {
       'click .remove-container': 'removeContainer',
+      'focus input': 'showPopup',
+      'blur input': 'hideHilite',
       'keyup input': 'updateField'
     },
 
@@ -36,6 +40,27 @@ module.exports = function (Module, App, Backbone) {
 
     removeContainer: function () {
       this.model.collection.remove(this.model);
+    },
+
+    showPopup: function (evt) {
+
+      var fieldName = $(evt.target).attr('name');
+
+      if (this.model.attributes.callouts[fieldName]) {
+        popup.open({
+          target: $(evt.target).closest('.field'),
+          position: 'right center',
+          contents: this.model.attributes.callouts[fieldName]
+        });
+      }
+
+      $('.citation-output span').removeClass('hilite');
+      $('.container-' + this.model.attributes.order + ' .field-' + fieldName).addClass('hilite');
+
+    },
+
+    hideHilite: function () {
+      $('.citation-output span').removeClass('hilite');
     },
 
     serializeData: function () {
@@ -53,6 +78,10 @@ module.exports = function (Module, App, Backbone) {
     events: {
       'click .add-container': 'addContainer',
       'keyup input': 'updateCitation'
+    },
+
+    onRender: function() {
+      this.updateCitation();
     },
 
     addContainer: function () {

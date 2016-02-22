@@ -6,6 +6,10 @@ $citation-color-2: #cef;
 $citation-color-3: #fce;
 $citation-color-4: #cfe;
 
+.content {
+  width: 100%;
+}
+
 .citation-template {
   max-width: 30em;
   padding: 1.5em;
@@ -32,21 +36,25 @@ $citation-color-4: #cfe;
   }
 
   span:nth-child(4n+2) {
-    background-color: $citation-color-1;
+    //background-color: $citation-color-1;
   }
 
   span:nth-child(4n+3) {
-    background-color: $citation-color-2;
+    //background-color: $citation-color-2;
   }
 
   span:nth-child(4n+4) {
-    background-color: $citation-color-3;
+    //background-color: $citation-color-3;
   }
 
   span:nth-child(4n+5) {
-    background-color: $citation-color-4;
+    //background-color: $citation-color-4;
   }
 
+}
+
+.hilite {
+  background-color: $hilite;
 }
 
 .add-container {
@@ -93,7 +101,7 @@ fieldset {
   position: relative;
 
   .citation-swatch {
-    background-color: $light-grey;
+    //background-color: $light-grey;
   }
 
   &:last-child {
@@ -104,32 +112,32 @@ fieldset {
 
   &:nth-child(4n+2) {
     .citation-swatch {
-      background-color: $citation-color-1;
+      //background-color: $citation-color-1;
     }
   }
 
   &:nth-child(4n+3) {
     .citation-swatch {
-      background-color: $citation-color-2;
+      //background-color: $citation-color-2;
     }
   }
 
   &:nth-child(4n+4) {
     .citation-swatch {
-      background-color: $citation-color-3;
+      //background-color: $citation-color-3;
     }
   }
 
   &:nth-child(4n+5) {
     .citation-swatch {
-      background-color: $citation-color-4;
+      //background-color: $citation-color-4;
     }
   }
 
 }
 
 .citation-swatch {
-  padding: 3px 15px 3px 10px;
+  padding: 0 10px;
 }
 
 .cite-submit {
@@ -153,12 +161,14 @@ fieldset {
 
   h3 {
     line-height: 1.5em;
+    padding-top: 10px;
   }
 
   .field {
     display: flex;
     flex-flow: column-reverse;
     margin: 0 0 0.25em 0;
+    position: relative;
   }
 
   label {
@@ -172,6 +182,7 @@ fieldset {
     margin: 0 10px;
     touch-action: manipulation;
     transition: all 0.2s;
+    z-index: 15;
   }
 
   input {
@@ -181,6 +192,7 @@ fieldset {
     border-radius: 0;
     cursor: text;
     font-size: 1.4em;
+    margin-right: 25px;
     padding: 3px 0;
 
     &:focus {
@@ -218,4 +230,24 @@ fieldset {
     transform: translate(0, 0) scale(1);
   }
 
+}
+
+.field::before {
+  bottom: 0;
+  content: ',';
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  right: 12px;
+  text-align: right;
+  width: 100%;
+  z-index: 10;
+}
+
+.final-element::before {
+  content: '.';
+}
+
+.modui-popup {
+  font-family: $header-secondary-font-family;
 }

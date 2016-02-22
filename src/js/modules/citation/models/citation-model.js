@@ -21,6 +21,7 @@ module.exports = function (Module, App, Backbone) {
         location: null,
         container: true,
         containerNumber: 1,
+        callouts: {},
         order: this.collection.nextOrder()
       };
     },
@@ -45,17 +46,8 @@ module.exports = function (Module, App, Backbone) {
       ];
 
       var formatAttribute = function (attr, str, separator) {
-
-        if (attr === 'title') {
-          if ((/^[\"“]/.test(str) && /[\"“]$/.test(str))) {
-            return str.replace(/^[\"]/, '“').replace(/[\"”]$/, separator + '”');
-          } else {
-            return '<em>' + str + '</em>' + separator;
-          }
-        } else {
-          return str + separator;
-        }
-
+        str = (str + separator).replace(/^[\"]/, '“').replace(/[\"”]$/, separator + '”');
+        return str.replace(/_([^_]+)_/g, '<em>$1</em>');
       };
 
       var filterAttrs = (this.attributes.container) ? containerAttrs : sourceAttrs;
@@ -70,11 +62,11 @@ module.exports = function (Module, App, Backbone) {
       var last = attrs.length - 1;
       var citation = attrs.map(function (attr, i) {
         var separator = (i === last) ? '.' : ',';
-        return formatAttribute(attr, modelAttrs[attr], separator);
+        return '<span class="field-' + attr + '">' + formatAttribute(attr, modelAttrs[attr], separator) + '</span>';
       });
 
       // Wrap in span.
-      return '<span>' + citation.join(' ') + '</span> ';
+      return '<span class="container-' + this.attributes.order + '">' + citation.join(' ') + '</span> ';
 
     }
 

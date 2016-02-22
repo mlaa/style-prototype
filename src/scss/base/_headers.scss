@@ -39,9 +39,9 @@ h1 {
 
 h2 {
 
-  color: $header-level-1-color;
-
   @extend %header;
+
+  color: $header-level-1-color;
   margin: 1.2em 0 0.5em 0;
 
   @include breakpoint(md) {
